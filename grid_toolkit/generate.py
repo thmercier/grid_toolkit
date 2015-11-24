@@ -27,7 +27,7 @@ def generate(n,length,Start_date):
     
     
     mean = 50.00021868201017
-    Means3 = numpy.zeros((12,2,24,4))
+    means3 = numpy.zeros((12,2,24,4))
     for i in range(11):
         for j in range(2):
             ifile  = open('/Users/mercierthomas/Desktop/RTE_Frequency_analysis/Mat_' + str(i+1) + '_' + str(j+1) + '_X_X.csv', "rb")
@@ -36,7 +36,7 @@ def generate(n,length,Start_date):
             for row in reader:
                 colnum = 0
                 for col in row:
-                    Means3[i,j,rownum,colnum] = float(col)
+                    means3[i,j,rownum,colnum] = float(col)
                     colnum += 1
                 rownum += 1
             ifile.close()
@@ -131,6 +131,6 @@ def generate(n,length,Start_date):
                 Freq[i,k] = phi1*Freq[i-1,k] + phi2*Freq[i-2,k] + phi3*Freq[i-3,k] + phi4*Freq[i-4,k] + sigma_t[1]*epsilon[1]
         
         for i in range(length):
-            Freq[i,k] = Freq[i,k] + mean + Means3[Months[i], Weekdays[i], Hours[i], Quarters[i]]
+            Freq[i,k] = Freq[i,k] + mean + means3[Months[i], Weekdays[i], Hours[i], Quarters[i]]
     
     return Freq
