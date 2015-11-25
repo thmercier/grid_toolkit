@@ -20,7 +20,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='grid_toolkit',
 
-    version='1.0.8',
+    version='1.0.9',
 
     description='A toolkit for generating grid-frequency deviation scenarios over 15 minute timesteps.',
     long_description=long_description,
@@ -107,7 +107,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
-            'freq_gen=grid_toolkit:frequency',
+            'freq_gen=grid_toolkit:generate',
         ],
     },
 )
