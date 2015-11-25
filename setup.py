@@ -20,7 +20,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='grid_toolkit',
 
-    version='1.0.9',
+    version='1.0.10',
 
     description='A toolkit for generating grid-frequency deviation scenarios over 15 minute timesteps.',
     long_description=long_description,
