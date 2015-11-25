@@ -1,9 +1,11 @@
 A grid toolkit
 ===========================
 
-This toolkit implements the model described in the following paper for generating scenarios of grid-frequency deviations over 15-minute time steps:
+This toolkit is linked to the following paper:
 
 T. Mercier, J. Jomaux, and E. De Jaeger, “Stochastic Programming for Valuing Energy Storage Providing Primary Frequency Control”.
+
+It implements the model described in the paper, based on Rte's 2015 grid-frequency measurements, and enables the generation of scenarios of grid-frequency deviations over 15-minute time steps.
 
 ## Installation
 
