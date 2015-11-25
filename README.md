@@ -17,7 +17,7 @@ scenarios = grid_toolkit.generate(n, length, [start_year, start_month, start_day
 
 ## Note on arguments
 
-All arguments are integers with n the number of scenarios you want to generate, length the number of time steps of the generated scenarios, start_year,start_month,start_day,start_hour] the starting date of the scenarios.
+All arguments are integers with n the number of scenarios you want to generate, length the number of time steps of the generated scenarios, [start_year, start_month, start_day, start_hour] the starting date of the scenarios.
 
 [start_year, start_month, start_day, start_hour] = [2015, 1, 1, 0] corresponds to 1 January 2015 at midnight.
 
