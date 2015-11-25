@@ -5,17 +5,10 @@ Created on Mon Nov 23 20:43:25 2015
 @author: mercierthomas
 """
 import numpy                     # we import the array library
-from matplotlib import pyplot    # import plotting library
-import scipy.io                  # input/output library
 import scipy.stats               # statistics library
-import statsmodels.api as sm     # for time series analysis and regressions
-from statsmodels.graphics.api import qqplot
-from scipy.fftpack import fft    # fast fourier transform
 from datetime import timedelta
 from datetime import datetime
 import pandas
-# import xlrd                      # to read .xls files
-# from arch import arch_model
 import csv
 import pytz
 
@@ -27,7 +20,7 @@ def generate(n,length,Start_date):
     
     
     mean = 50.00021868201017
-    means3 = numpy.zeros((12,2,24,4))
+    means = numpy.zeros((12,2,24,4))
     for i in range(11):
         for j in range(2):
             ifile  = open('/Users/mercierthomas/Desktop/RTE_Frequency_analysis/Mat_' + str(i+1) + '_' + str(j+1) + '_X_X.csv', "rb")
@@ -36,7 +29,7 @@ def generate(n,length,Start_date):
             for row in reader:
                 colnum = 0
                 for col in row:
-                    means3[i,j,rownum,colnum] = float(col)
+                    means[i,j,rownum,colnum] = float(col)
                     colnum += 1
                 rownum += 1
             ifile.close()
@@ -131,6 +124,6 @@ def generate(n,length,Start_date):
                 Freq[i,k] = phi1*Freq[i-1,k] + phi2*Freq[i-2,k] + phi3*Freq[i-3,k] + phi4*Freq[i-4,k] + sigma_t[1]*epsilon[1]
         
         for i in range(length):
-            Freq[i,k] = Freq[i,k] + mean + means3[Months[i], Weekdays[i], Hours[i], Quarters[i]]
+            Freq[i,k] = Freq[i,k] + mean + means[Months[i], Weekdays[i], Hours[i], Quarters[i]]
     
     return Freq
