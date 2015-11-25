@@ -5,17 +5,17 @@ This toolkit implements the model described in the following paper for generatin
 
 T. Mercier, J. Jomaux, and E. De Jaeger, “Stochastic Programming for Valuing Energy Storage Providing Primary Frequency Control”.
 
-# Installation
+## Installation
 
 pip install grid_toolkit
 
-# Use
+## Use
 
 import grid_toolkit
 
 scenarios = grid_toolkit.generate(n,length,[start_year,start_month,start_day,start_hour])
 
-# Note on arguments
+## Note on arguments
 
 All arguments are integers with n the number of scenarios you want to generate, length the number of time steps of the generated scenarios, start_year,start_month,start_day,start_hour] the starting date of the scenarios.
 
