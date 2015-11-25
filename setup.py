@@ -20,14 +20,14 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='grid_toolkit',
 
-    version='1.0.7',
+    version='1.0.8',
 
-    description='A toolkit for generating grid-frequency deviation scenarios over 15 min. timesteps.',
+    description='A toolkit for generating grid-frequency deviation scenarios over 15 minute timesteps.',
     long_description=long_description,
 
 
     # The project's main homepage.
-    url='https://github.com/pypa/sampleproject',
+    url='https://github.com/thmercier/grid_toolkit',
 
     # Author details
     author='Thomas Mercier',
@@ -107,7 +107,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
-            'freq_gen=grid_toolkit:generate',
+            'freq_gen=grid_toolkit:frequency',
         ],
     },
 )
