@@ -4,7 +4,7 @@ Created on Mon Nov 23 20:43:25 2015
 
 @author: mercierthomas
 """
-import numpy                     # we import the array library
+import numpy                     # array library
 import scipy.stats               # statistics library
 from datetime import timedelta
 from datetime import datetime
@@ -12,12 +12,13 @@ import pandas
 import csv
 import pytz
 
-def generate(n,length,Start_date):
-    # The module will generate n scenarios of frequency deviations    
-    # The frequency-deviations series will be composed of a number length of time steps
-    # Start_date is a vector indicating the date at which the time series should begin
-    # Start_date = [2015,1,1,0] will make the time series start on 1 January 2015 at 00:00 am
+def generate(n, length, Start_date):
+    """Generate n scenarios of frequency deviations
     
+    The frequency-deviations series will be composed of a number length of time steps
+    Start_date is a vector indicating the date at which the time series should begin
+    Start_date = [2015,1,1,0] will make the time series start on 1 January 2015 at 00:00 am
+    """
     
     mean = 50.00021868201017
     means = numpy.zeros((12,2,24,4))
