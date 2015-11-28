@@ -9,18 +9,26 @@ It implements the model described in the paper, based on Rte's 2015 grid-frequen
 
 ## Installation
 
-pip install grid_toolkit
+```console
+$ pip install grid_toolkit
+```
 
 ## Use
 
-import grid_toolkit
+```python
+import grid_toolkit as grid
 
-scenarios = grid_toolkit.generate(n, length, [start_year, start_month, start_day, start_hour])
+scenarios = grid.generate(n, length, [start_year, start_month, start_day, start_hour])
+```
 
 ## Note on arguments
 
-All arguments are integers with n the number of scenarios you want to generate, length the number of time steps of the generated scenarios, [start_year, start_month, start_day, start_hour] the starting date of the scenarios.
+All arguments are integers with `n` being the number of scenarios you want to generate, `length` the number of time steps in the generated scenarios, `[start_year, start_month, start_day, start_hour]` is the starting datetime of the scenarios.
 
-[start_year, start_month, start_day, start_hour] = [2015, 1, 1, 0] corresponds to 1 January 2015 at midnight.
+```python
+[start_year, start_month, start_day, start_hour] = [2015, 1, 1, 0]
+```
 
-Note that daylight saving time is taken into account.
+corresponds to 1 January 2015 at midnight. The ability to provide standard [`datetime`](https://docs.python.org/2/library/datetime.html#datetime-objects) objects will be added soon.
+
+Note that daylight saving time is taken into account in the model.
